@@ -86,7 +86,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
 <li>Node.js</li>
 <li>Git</li>
 <li>Hexo</li>
@@ -99,7 +100,7 @@
 </li>
 <li><p>是否成功标志，可打开 <strong>cmd</strong> 查看</p>
 <ul>
-<li><img src="/./images/cmd_node-v.jpg" alt="1"></li>
+<li><img src="/2023/02/13/myblog/cmd_node-v.jpg" alt="查看nodejs版本"></li>
 </ul>
 </li>
 <li><p>修改 npm 默认路径</p>
@@ -112,9 +113,9 @@
 <li><p>修改环境变量</p>
 <ul>
 <li>我的电脑-&gt;右键-&gt;属性-&gt;高级系统设置-&gt;高级-&gt;环境变量</li>
-<li><img src="/./images/path1.jpg" alt="2"></li>
-<li><img src="/./images/path2.jpg" alt="3"></li>
-<li><img src="/./images/path3.jpg" alt="4"></li>
+<li><img src="/2023/02/13/myblog/path1.jpg" alt="编辑系统变量"></li>
+<li><img src="/2023/02/13/myblog/path2.jpg" alt="添加用户变量"></li>
+<li><img src="/2023/02/13/myblog/path3.jpg" alt="添加系统变量"></li>
 </ul>
 </li>
 <li><p>测试验证：下载一个模块，是否成功出现在<code>D:\nodejs\node_global\node_modules</code>中</p>
@@ -138,7 +139,7 @@
 <ul>
 <li>浏览器打开<code>http://localhost:4000</code>，可查看效果</li>
 </ul>
-<p><img src="/./images/hexo-index.jpg" alt="5"></p>
+<p><img src="/2023/02/13/myblog/hexo-index.jpg" alt="hexo默认页面"></p>
 <blockquote>
 <p><strong>使用 windows PowerShell 执行 hexo s 失败，报错如下：</strong><br>hexo : 无法加载文件 <code>D:\nodejs\node_global\hexo.ps1</code>，因为在此系统上禁止运行脚本。有关详细信息，请参阅 <code>https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies</code><br><strong>解决方法</strong>：<br>在<code>windows PowerShell</code>中先执行<code>set-ExecutionPolicy RemoteSigned</code>，再执行<code>hexo s</code></p>
 </blockquote>
@@ -154,25 +155,41 @@
 <ul>
 <li>先创建新仓库</li>
 </ul>
-<p><img src="/2023/02/13/myblog/github-new.jpg" alt="github-new"></p>
+<p><img src="/2023/02/13/myblog/github-new.jpg" alt="github创建新项目"></p>
 <ul>
-<li>修改 _config.xml 文件</li>
+<li>修改 _config.yml 文件</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yyucw/yyucw.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/yyucw/yyucw.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>部署命令</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 执行部署命令</span><br><span class="line">&gt; hexo d</span><br><span class="line">ERROR Deployer not found: git</span><br><span class="line"></span><br><span class="line"># 如果上述命令出错：</span><br><span class="line">&gt; npm install hexo-deployer-git --save</span><br><span class="line">+ hexo-deployer-git@ (略)</span><br><span class="line"></span><br><span class="line"># 再次部署</span><br><span class="line">&gt; hexo d</span><br><span class="line">INFO Deploying: git</span><br><span class="line">(略)</span><br><span class="line">INFO Deploy done: git</span><br><span class="line"># 完成部署</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 执行部署命令</span><br><span class="line">&gt; hexo d</span><br><span class="line">ERROR Deployer not found: git</span><br><span class="line"></span><br><span class="line"># 如果上述命令出错：</span><br><span class="line">&gt; npm install hexo-deployer-git --save</span><br><span class="line">+ hexo-deployer-git@ (略)</span><br><span class="line"></span><br><span class="line"># 再次部署</span><br><span class="line">&gt; hexo d</span><br><span class="line">INFO Deploying: git</span><br><span class="line">(略)</span><br><span class="line">INFO Deploy done: git</span><br><span class="line"># 完成部署</span><br><span class="line"></span><br><span class="line"># 以后更新文章三步走</span><br><span class="line"># &gt; hexo clean</span><br><span class="line"># &gt; hexo g</span><br><span class="line"># &gt; hexo d</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>浏览器打开 <code>https://yyucw.github.io</code></li>
 </ul>
+<h2 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h2><h3 id="解决github图片加载问题"><a href="#解决github图片加载问题" class="headerlink" title="解决github图片加载问题"></a>解决github图片加载问题</h3><p><strong>问题：</strong> 在编辑时可显示图片，上传github后无法显示图片。<br><strong>原因：</strong> 图片没有自动上传到github，导致找不到图片。<br><strong>解决思路：</strong> 文章转成静态页面时，需要将图片包含进去，其次还需要生成正确的路径。参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">官方文档</a>。</p>
+<p><strong>步骤：</strong></p>
+<ul>
+<li>添加组件<code>hexo-renderer-marked</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>_config.yml</code></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启该配置后，通过命令 hexo new 生成的文件，会额外多生成同名的文件夹，用于存图片，同时图片也会加载到 public 目录里</span></span><br><span class="line"><span class="string">post_asset_folder:true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新增以下配置</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line"><span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>启用后，资源图片将会被自动解析为其对应文章的路径。</p>
+<blockquote>
+<p>例如： image.jpg 位置为 /2020/01/02/foo/image.jpg ，这表示它是 /2020/01/02/foo/ 文章的一张资源图片，!<a href="image.jpg"></a> 将会被解析为 &lt;img src=&quot;/2020/01/02/foo/image.jpg”&gt;</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/13/myblog/" data-id="cle3tzrmp0001g0h6crbkftcp" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/13/myblog/" data-id="cle3v62rv0001h4h6he0df4cz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/13/hello-world/" data-id="cle3tzrmi0000g0h6hxn20tib" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/13/hello-world/" data-id="cle3v62ro0000h4h601phen46" class="article-share-link">Share</a>
       
       
     </footer>
